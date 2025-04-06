@@ -1,28 +1,24 @@
-package school.sptech.exemplo_relacionamento.Entity;
+package school.sptech.exemplo_relacionamento.Dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.*;
-import org.hibernate.annotations.ValueGenerationType;
+import jakarta.validation.constraints.NotBlank;
 
-@Entity
-public class Curso {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CursoListagemDto {
+    @NotBlank
     private Integer id;
+    @NotBlank
     private String nome;
+    @NotBlank
     private String descricao;
+    @NotBlank
     private Double preco;
+    @NotBlank
     private String categoria;
 
-
-    public Curso() {
+    public CursoListagemDto() {
     }
 
-    public Curso( String nome, String descricao, Double preco, String categoria) {
+    public CursoListagemDto(Integer id, String nome, String descricao, Double preco, String categoria) {
+        this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
